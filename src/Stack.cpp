@@ -19,18 +19,20 @@ void Stack::push(int value) {
   // delete old stack
   // point old stack pointer to new stack
 
-/*
+
   if(top >= maxSize){
-    int* temp = new int[getMaxSize * 2];
+    int* temp = theStack;                                  //assigns
+    theStack = new int[maxSize * 2];
+
     for(int i = 0; i < top; i++){
-      temp[i] = theStack[i];
+      theStack[i] = temp[i];    //assigns the old Stack value into the new theStack array
     }
-    ~Stack();
-    &theStack = *temp;
+    maxSize = maxSize * 2;
+    delete[] temp;
     
   }
 
-*/
+
   theStack[top] = value;
   top++;
 }
